@@ -1,0 +1,11 @@
+{"level":"info","message":"::1 - - [13/Nov/2023:17:09:07 +0000] \"POST /users HTTP/1.1\" 201 113 \"-\" \"PostmanRuntime/7.34.0\""}
+{"level":"info","message":"::1 - - [13/Nov/2023:17:20:43 +0000] \"GET / HTTP/1.1\" 200 11 \"-\" \"PostmanRuntime/7.34.0\""}
+info:[13/Nov/2023:14:09:16 -0400] Creando un nuevo usuario
+info:[13/Nov/2023:14:09:16 -0400] Creando un nuevo usuario en UserService
+debug:[13/Nov/2023:14:09:16 -0400] Usuario creado con éxito en UserService
+debug:[13/Nov/2023:14:09:16 -0400] Usuario creado con éxito
+info:[13/Nov/2023:14:15:35 -0400] Creando un nuevo usuario
+info:[13/Nov/2023:14:15:35 -0400] Creando un nuevo usuario en UserService
+debug:[13/Nov/2023:14:15:35 -0400] Usuario creado con éxito en UserService
+debug:[13/Nov/2023:14:15:35 -0400] Usuario creado con éxito
+info:[13/Nov/2023:14:15:35 -0400] ::1 - - [13/Nov/2023:18:15:35 +0000] "POST /users HTTP/1.1" 201 113 "-" "PostmanRuntime/7.34.0"
