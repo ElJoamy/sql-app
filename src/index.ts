@@ -1,16 +1,17 @@
 import express, { Request, Response } from 'express';
-import { AppDataSource } from "./infraestructure/config/dataSource";
-import { UserService } from './app/services/user.service';
-import { UserRepositoryImpl } from './infraestructure/repositories/user.repository';
-import { UserController } from './api/controllers/user.controller';
+import { AppDataSource } from "./infrastructure/config/dataSource";
+import { UserService } from './app/services/userService';
+import { UserRepositoryImpl } from './infrastructure/repositories/userRepositoryImpl';
+import { UserController } from './api/controllers/userController';
 
 AppDataSource.initialize().then(() => {
     const app = express();
 
     const PORT = 3000;
+    app.use(express.json());
 
     app.get('/', (req: Request, res: Response) => {
-        res.send('¡Hola Mundo con Express y TypeScript ssssss!');
+        res.send('Servidor Up');
     });
 
     const userRepository = new UserRepositoryImpl();

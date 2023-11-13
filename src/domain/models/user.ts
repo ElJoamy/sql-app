@@ -19,9 +19,4 @@ export class User {
         this.lastLogin = userEntity.lastLogin;
         this.roleId = userEntity.roleId;
     }
-
-    // const logout = () => {
-    //     //logic to logout
-        
-    // }
 }

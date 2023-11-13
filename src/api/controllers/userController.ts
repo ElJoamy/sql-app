@@ -1,9 +1,12 @@
 import { Request, Response, Router } from 'express';
-import { UserService } from '../../app/services/user.service';
+import { UserService } from '../../app/services/userService';
+import { UserDto } from '../../app/dtos/user.dto';
+import { CreateUserDTO } from '../../app/dtos/create.user.dto';
 
 export class UserController {
     public router: Router;
     private userService: UserService;
+
 
     constructor(userService: UserService) {
         this.userService = userService;
@@ -23,7 +26,19 @@ export class UserController {
         res.json(userDto);
     }
 
+    public async createUser(req: Request, res: Response): Promise<Response> {
+        try {
+            const userDto: CreateUserDTO = req.body;
+            const user = await this.userService.createUser(userDto);
+            return res.status(201).json(user);
+        } catch (error) {
+            console.log(error);
+            return res.status(400).json({ message: error });
+        }
+    }
+
     public routes() {
         this.router.get('/:id', this.getUserById.bind(this));
+        this.router.post('/', this.createUser.bind(this));
     }
 }
