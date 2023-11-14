@@ -1,34 +1,41 @@
 import express, { Request, Response } from 'express';
+import morgan from 'morgan';
 import dotenv from 'dotenv';
-import morgan from "morgan";
+
 import { AppDataSource } from "./infrastructure/config/dataSource";
 import { UserService } from './app/services/userService';
 import { UserRepositoryImpl } from './infrastructure/repositories/userRepositoryImpl';
 import { UserController } from './api/controllers/userController';
-import { config } from './infrastructure/config/config/config';
 import logger from './infrastructure/logger/logger';
+import { env } from './infrastructure/config/config';
+import { RoleRepositoryImpl } from './infrastructure/repositories/roleRepositoryImpl';
+import { RoleService } from './app/services/roleService';
+import { RoleController } from './api/controllers/roleController';
 
 AppDataSource.initialize().then(() => {
     const app = express();
+    dotenv.config();
 
-    const PORT = config.port;
+    const PORT = env.port;
+
     app.use(express.json());
 
-    app.use(
-        morgan("combined", {
-          stream: { write: (message: string) => logger.info(message.trim()) },
-        })
-      );
+    // Setup Logger 
+    app.use(morgan('combined', { stream: { write: (message: string) => logger.info(message.trim()) } }));
 
     app.get('/', (req: Request, res: Response) => {
         res.send('Servidor Up');
     });
-
+    const roleRepository = new RoleRepositoryImpl();
+    const roleService = new RoleService(roleRepository);
+    const roleController = new RoleController(roleService);
+    
     const userRepository = new UserRepositoryImpl();
-    const userService = new UserService(userRepository);
+    const userService = new UserService(userRepository, roleRepository);
     const userController = new UserController(userService);
 
     app.use('/users', userController.router);
+    app.use('/roles', roleController.router);
 
     app.listen(PORT, () => {
         console.log(`Servidor ejecutándose en http://localhost:${PORT}`);

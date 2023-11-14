@@ -1,18 +1,19 @@
 import "reflect-metadata";
 import { DataSource } from "typeorm";
 import { UserEntity } from "../entities/userEntity";
-import { dbConfig } from "./config/config";
+import { db } from '../../infrastructure/config/config';
+import { RoleEntity } from "../entities/roleEntity";
 
 export const AppDataSource = new DataSource({
-    type: dbConfig.db_type,
-    host: dbConfig.db_host,
-    port: dbConfig.db_port,
-    username: dbConfig.db_user,
-    password: dbConfig.db_pass,
-    database: dbConfig.db_name,
+    type: db.type as "mysql" | "mariadb",
+    host: db.host,
+    port: db.port as number,
+    username: db.username,
+    password: db.password,
+    database: db.database,
     synchronize: true,
     logging: false,
-    entities: [UserEntity],
+    entities: [UserEntity, RoleEntity],
     subscribers: [],
     migrations: [],
 });
