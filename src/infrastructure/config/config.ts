@@ -14,10 +14,13 @@ export const db = {
     password: process.env.DB_PASS ||  'root',
     host: process.env.DB_HOST || 'localhost',
     database: process.env.DB_NAME || 'app',
-};
+}
 console.log(db);
 
-
 export const lg = {
-    level: process.env.LG_LEVEL || 'info'
+    level: process.env.LOGGER_LEVEL || 'info'
+}
+
+export const jwt = {
+    secretKey:process.env.JWT_SECRET || 'your_secret_key'
 }

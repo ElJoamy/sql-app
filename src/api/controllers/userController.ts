@@ -76,9 +76,9 @@ export class UserController {
     };
 
     public routes() {
-        this.router.get('/', this.getUsers.bind(this));
         this.router.get('/:id', this.getUserById.bind(this));
         this.router.post('/', this.createUser.bind(this));
+        this.router.get('/', this.getUsers.bind(this));
         this.router.delete('/:userId', this.deleteUser.bind(this));
         this.router.put('/:userId', this.updateUser.bind(this));
     }
