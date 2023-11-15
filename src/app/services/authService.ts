@@ -16,7 +16,8 @@ export class AuthService {
         };
         const user: User = await this.userRepository.findByEmail(userEntity.email);
         if (!user) {
-            //TODO: create an error deberia ser error ?
+            logger.error(`El usuario con email: ${userEntity.email} no existe`);
+            throw new Error('El email o la contraseña son incorrectos');
         }
         // TODO: deberia estar en este lugar ?  
         const token = jwt.sign({ userId: user.id }, jwtConfig.secretKey, { expiresIn: '1h' });
