@@ -14,6 +14,7 @@ import { RoleController } from './api/controllers/roleController';
 import { AuthController } from './api/controllers/authController';
 import { AuthService } from './app/services/authService';
 import { EncryptImpl } from './infrastructure/utils/encrypt.jwt';
+import { routes } from './api/controllers/apiRoutes';
 
 AppDataSource.initialize().then(() => {
     const app = express();
@@ -30,22 +31,7 @@ AppDataSource.initialize().then(() => {
         res.send('Servidor Up');
     });
 
-    const encrypt = new EncryptImpl();
-
-    const roleRepository = new RoleRepositoryImpl();
-    const roleService = new RoleService(roleRepository);
-    const roleController = new RoleController(roleService);
-    
-    const userRepository = new UserRepositoryImpl();
-    const userService = new UserService(userRepository, roleRepository);
-    const userController = new UserController(userService);
-    
-    const authService = new AuthService(userRepository, encrypt);
-    const authController = new AuthController(authService);
-    
-    app.use('/users', userController.router);
-    app.use('/roles', roleController.router);
-    app.use('/auth', authController.router);
+    routes(app);
 
     app.listen(PORT, () => {
         console.log(`Servidor ejecutándose en http://localhost:${PORT}`);
