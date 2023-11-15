@@ -112,3 +112,5 @@ info: ::ffff:127.0.0.1 - - [15/Nov/2023:17:29:58 +0000] "GET /auth/login HTTP/1.
 info: ::ffff:127.0.0.1 - - [15/Nov/2023:17:30:08 +0000] "POST /auth/login HTTP/1.1" 400 14 "-" "PostmanRuntime/7.35.0" {"timestamp":"15/Nov/2023:13:30:08 -0400"}
 info: ::ffff:127.0.0.1 - - [15/Nov/2023:17:30:46 +0000] "POST /auth/login HTTP/1.1" 400 14 "-" "node-fetch/1.0 (+https://github.com/bitinn/node-fetch)" {"timestamp":"15/Nov/2023:13:30:46 -0400"}
 info: ::ffff:127.0.0.1 - - [15/Nov/2023:17:31:32 +0000] "POST /auth/login HTTP/1.1" 200 338 "-" "node-fetch/1.0 (+https://github.com/bitinn/node-fetch)" {"timestamp":"15/Nov/2023:13:31:32 -0400"}
+info: ::ffff:127.0.0.1 - - [15/Nov/2023:17:53:54 +0000] "GET /api/users HTTP/1.1" 200 365 "-" "node-fetch/1.0 (+https://github.com/bitinn/node-fetch)" {"timestamp":"15/Nov/2023:13:53:54 -0400"}
+info: ::ffff:127.0.0.1 - - [15/Nov/2023:17:54:49 +0000] "GET /api/users HTTP/1.1" 200 365 "-" "node-fetch/1.0 (+https://github.com/bitinn/node-fetch)" {"timestamp":"15/Nov/2023:13:54:49 -0400"}

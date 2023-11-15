@@ -3,6 +3,7 @@ import { UserService } from '../../app/services/userService';
 import { UserDto } from '../../app/dtos/user.dto';
 import { CreateUserDTO } from '../../app/dtos/create.user.dto';
 import logger from '../../infrastructure/logger/logger';
+import { verifyTokenMiddleware } from './../middleware/verifyToken';
 
 export class UserController {
     public router: Router;
@@ -76,7 +77,7 @@ export class UserController {
     };
 
     public routes() {
-        this.router.get('/:id', this.getUserById.bind(this));
+        this.router.get('/:id', verifyTokenMiddleware, this.getUserById.bind(this));
         this.router.post('/', this.createUser.bind(this));
         this.router.get('/', this.getUsers.bind(this));
         this.router.delete('/:userId', this.deleteUser.bind(this));
