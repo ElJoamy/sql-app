@@ -7,10 +7,10 @@ export class RedisCacheService implements ICacheService {
 
     constructor() {
         this.client = createClient({
-            host: redis_env.host,
-            port: redis_env.port,
+            url: `redis://${redis_env.host}:${redis_env.port}`,
             password: redis_env.password
         });
+        
         this.client.connect();
     }
 
@@ -18,7 +18,7 @@ export class RedisCacheService implements ICacheService {
         return this.client.get(key);
     }
 
-    async set(key: string, value: string): Promise<void>{
+    async set (key: string, value: string): Promise<void> {
         this.client.set(key, value);
     }
 }

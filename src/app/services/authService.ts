@@ -16,8 +16,10 @@ export class AuthService {
     }
 
     async getCache() {
-        const sol = await this.redisCacheService.get('test:123');
-        console.log(sol);
+        const USER_KEY = 'USER';
+        const userID = '1';
+        const sol = await this.redisCacheService.get('${USER_KEY}:${userID}');
+        console.log("🚀 ~ file: authService.ts:22 ~ AuthService ~ getCache ~ sol:", sol)
     }
 
     async login(loginDTO: LoginDTO): Promise<UserDto> {

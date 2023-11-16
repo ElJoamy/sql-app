@@ -27,10 +27,8 @@ export class UserService {
     }
 
     async getUserById(id: string): Promise<UserDto | null> {
-
         const user = await this.userRepository.findById(id);
-        // log.debug user
-
+        logger.debug(`UserService: Intentando obtener al usuario con ID: ${id}`);
         if (!user) return null;
 
         const userResponse: UserDto = {
