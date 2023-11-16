@@ -8,9 +8,17 @@ import { UserDto } from "../dtos/user.dto";
 import { User } from "../../domain/models/user";
 import { Encrypt } from './../utils/encrypt';
 import bcrypt from 'bcrypt';
+import { RedisCacheService } from './../../infrastructure/cache/redis.cache';
 
 export class AuthService {
-    constructor(private userRepository: UserRepository, private encrypt: Encrypt) { }
+    constructor(private userRepository: UserRepository, private encrypt: Encrypt, private redisCacheService: RedisCacheService) { 
+        this.getCache();
+    }
+
+    async getCache() {
+        const sol = await this.redisCacheService.get('test:123');
+        console.log(sol);
+    }
 
     async login(loginDTO: LoginDTO): Promise<UserDto> {
         const userEntity: Partial<IUserEntity> = {
