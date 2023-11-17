@@ -5,3 +5,5 @@ error:[14/Nov/2023:12:20:33 -0400] Error al crear el usuario en UserService: Que
 error:[14/Nov/2023:12:20:33 -0400] Error en Create user ER_DUP_ENTRY: Duplicate entry 'ejemplo3@localhost' for key 'user_entity.IDX_415c35b9b3b6fe45a3b065030f'
 error:[14/Nov/2023:12:20:48 -0400] Error en Create rol No metadata for "RolEntity" was found.
 error:[14/Nov/2023:12:21:37 -0400] Error en Create rol No metadata for "RolEntity" was found.
+error: El usuario con email: ejemplo3@localhost no existe {"timestamp":"17/Nov/2023:12:04:23 -0400"}
+error: There is an error in the login process El email o la contraseña son incorrectos {"stack":"Error: El email o la contraseña son incorrectos\n    at AuthService.<anonymous> (D:\\Documentos\\UPB\\8vo semestre\\certi Backend\\sql-app\\src\\app\\services\\authService.ts:33:19)\n    at Generator.next (<anonymous>)\n    at fulfilled (D:\\Documentos\\UPB\\8vo semestre\\certi Backend\\sql-app\\src\\app\\services\\authService.ts:5:58)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)","timestamp":"17/Nov/2023:12:04:23 -0400"}

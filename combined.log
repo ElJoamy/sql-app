@@ -269,3 +269,29 @@ info: ::ffff:127.0.0.1 - - [16/Nov/2023:18:06:42 +0000] "POST /api/auth/login HT
 info: ::ffff:127.0.0.1 - - [16/Nov/2023:18:06:43 +0000] "POST /api/auth/login HTTP/1.1" 200 338 "-" "node-fetch/1.0 (+https://github.com/bitinn/node-fetch)" {"timestamp":"16/Nov/2023:14:06:43 -0400"}
 info: ::ffff:127.0.0.1 - - [16/Nov/2023:18:06:43 +0000] "POST /api/auth/login HTTP/1.1" 200 338 "-" "node-fetch/1.0 (+https://github.com/bitinn/node-fetch)" {"timestamp":"16/Nov/2023:14:06:43 -0400"}
 info: ::1 - - [16/Nov/2023:18:07:13 +0000] "GET /api/users/a3ac8c7d-5dad-41ec-ba88-093a8bc7c4f4 HTTP/1.1" 403 30 "-" "PostmanRuntime/7.35.0" {"timestamp":"16/Nov/2023:14:07:13 -0400"}
+info: ::1 - - [17/Nov/2023:16:02:26 +0000] "GET /roles HTTP/1.1" 404 144 "-" "PostmanRuntime/7.35.0" {"timestamp":"17/Nov/2023:12:02:26 -0400"}
+info: ::1 - - [17/Nov/2023:16:02:29 +0000] "GET /roles HTTP/1.1" 404 144 "-" "PostmanRuntime/7.35.0" {"timestamp":"17/Nov/2023:12:02:29 -0400"}
+info: ::1 - - [17/Nov/2023:16:02:38 +0000] "GET /api/roles HTTP/1.1" 200 92 "-" "PostmanRuntime/7.35.0" {"timestamp":"17/Nov/2023:12:02:38 -0400"}
+info: ::1 - - [17/Nov/2023:16:03:01 +0000] "POST /users HTTP/1.1" 404 145 "-" "PostmanRuntime/7.35.0" {"timestamp":"17/Nov/2023:12:03:01 -0400"}
+info: ::1 - - [17/Nov/2023:16:03:09 +0000] "POST /api/users HTTP/1.1" 201 328 "-" "PostmanRuntime/7.35.0" {"timestamp":"17/Nov/2023:12:03:09 -0400"}
+info: ::1 - - [17/Nov/2023:16:03:24 +0000] "GET /api/users/e45f9c37-1457-4050-82dc-2e42f95dfa6d HTTP/1.1" 403 30 "-" "PostmanRuntime/7.35.0" {"timestamp":"17/Nov/2023:12:03:24 -0400"}
+info: ::1 - - [17/Nov/2023:16:03:58 +0000] "POST /api/users HTTP/1.1" 201 328 "-" "PostmanRuntime/7.35.0" {"timestamp":"17/Nov/2023:12:03:58 -0400"}
+info: ::1 - - [17/Nov/2023:16:04:07 +0000] "GET /api/users/0e81b6d1-2a96-490f-9a38-2817de0ccb64 HTTP/1.1" 403 30 "-" "PostmanRuntime/7.35.0" {"timestamp":"17/Nov/2023:12:04:07 -0400"}
+error: El usuario con email: ejemplo3@localhost no existe {"timestamp":"17/Nov/2023:12:04:23 -0400"}
+error: There is an error in the login process El email o la contraseña son incorrectos {"stack":"Error: El email o la contraseña son incorrectos\n    at AuthService.<anonymous> (D:\\Documentos\\UPB\\8vo semestre\\certi Backend\\sql-app\\src\\app\\services\\authService.ts:33:19)\n    at Generator.next (<anonymous>)\n    at fulfilled (D:\\Documentos\\UPB\\8vo semestre\\certi Backend\\sql-app\\src\\app\\services\\authService.ts:5:58)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)","timestamp":"17/Nov/2023:12:04:23 -0400"}
+info: ::ffff:127.0.0.1 - - [17/Nov/2023:16:04:23 +0000] "POST /api/auth/login HTTP/1.1" 400 55 "-" "PostmanRuntime/7.35.0" {"timestamp":"17/Nov/2023:12:04:23 -0400"}
+info: ::ffff:127.0.0.1 - - [17/Nov/2023:16:04:28 +0000] "POST /api/auth/login HTTP/1.1" 200 338 "-" "PostmanRuntime/7.35.0" {"timestamp":"17/Nov/2023:12:04:28 -0400"}
+info: Alguna información relevante {"timestamp":"17/Nov/2023:12:04:33 -0400"}
+debug: UserService: Intentando obtener al usuario con ID: 0e81b6d1-2a96-490f-9a38-2817de0ccb64 {"timestamp":"17/Nov/2023:12:04:33 -0400"}
+info: ::1 - - [17/Nov/2023:16:04:33 +0000] "GET /api/users/0e81b6d1-2a96-490f-9a38-2817de0ccb64 HTTP/1.1" 200 113 "-" "PostmanRuntime/7.35.0" {"timestamp":"17/Nov/2023:12:04:33 -0400"}
+info: ::ffff:127.0.0.1 - - [17/Nov/2023:16:05:09 +0000] "POST /api/auth/login HTTP/1.1" 200 338 "-" "PostmanRuntime/7.35.0" {"timestamp":"17/Nov/2023:12:05:09 -0400"}
+debug: UserService: Obteniendo al usuario con ID: 0e81b6d1-2a96-490f-9a38-2817de0ccb64 desde la cache {"timestamp":"17/Nov/2023:12:05:12 -0400"}
+info: ::1 - - [17/Nov/2023:16:05:12 +0000] "GET /api/users/0e81b6d1-2a96-490f-9a38-2817de0ccb64 HTTP/1.1" 200 113 "-" "PostmanRuntime/7.35.0" {"timestamp":"17/Nov/2023:12:05:12 -0400"}
+info: ::1 - - [17/Nov/2023:16:12:53 +0000] "POST /api/users HTTP/1.1" 201 328 "-" "PostmanRuntime/7.35.0" {"timestamp":"17/Nov/2023:12:12:53 -0400"}
+info: ::ffff:127.0.0.1 - - [17/Nov/2023:16:13:04 +0000] "POST /api/auth/login HTTP/1.1" 200 338 "-" "PostmanRuntime/7.35.0" {"timestamp":"17/Nov/2023:12:13:04 -0400"}
+info: Alguna información relevante {"timestamp":"17/Nov/2023:12:13:13 -0400"}
+debug: UserService: Intentando obtener al usuario con ID: dcf0ed8d-d592-48cc-8a96-1e2bd0b25d00 {"timestamp":"17/Nov/2023:12:13:13 -0400"}
+info: ::1 - - [17/Nov/2023:16:13:13 +0000] "GET /api/users/dcf0ed8d-d592-48cc-8a96-1e2bd0b25d00 HTTP/1.1" 200 113 "-" "PostmanRuntime/7.35.0" {"timestamp":"17/Nov/2023:12:13:13 -0400"}
+info: ::ffff:127.0.0.1 - - [17/Nov/2023:16:13:23 +0000] "POST /api/auth/login HTTP/1.1" 200 338 "-" "PostmanRuntime/7.35.0" {"timestamp":"17/Nov/2023:12:13:23 -0400"}
+debug: UserService: Obteniendo al usuario con ID: dcf0ed8d-d592-48cc-8a96-1e2bd0b25d00 desde la cache {"timestamp":"17/Nov/2023:12:13:28 -0400"}
+info: ::1 - - [17/Nov/2023:16:13:28 +0000] "GET /api/users/dcf0ed8d-d592-48cc-8a96-1e2bd0b25d00 HTTP/1.1" 200 113 "-" "PostmanRuntime/7.35.0" {"timestamp":"17/Nov/2023:12:13:28 -0400"}

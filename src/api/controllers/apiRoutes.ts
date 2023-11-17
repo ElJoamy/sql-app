@@ -18,7 +18,7 @@ const roleService = new RoleService(roleRepository);
 const roleController = new RoleController(roleService);
 
 const userRepository = new UserRepositoryImpl();
-const userService = new UserService(userRepository, roleRepository);
+const userService = new UserService(userRepository, roleRepository, redisCacheService);
 const userController = new UserController(userService);
 
 const authService = new AuthService(userRepository, encrypt, redisCacheService);
