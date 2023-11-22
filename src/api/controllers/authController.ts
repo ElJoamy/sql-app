@@ -1,3 +1,4 @@
+
 import { Request, Response, Router } from 'express';
 import { LoginDTO } from '../../app/dtos/login.dto';
 import { AuthService } from '../../app/services/authService';
@@ -13,6 +14,61 @@ export class AuthController {
         this.router = Router();
         this.routes();
     }
+
+    /**
+     * @swagger
+     * /login:
+     *   post:
+     *     summary: Inicia sesión de un usuario
+     *     tags: [Autenticación]
+     *     requestBody:
+     *       required: true
+     *       content:
+     *         application/json:
+     *           schema:
+     *             type: object
+     *             required:
+     *               - username
+     *               - password
+     *             properties:
+     *               username:
+     *                 type: string
+     *               password:
+     *                 type: string
+     *             example:
+     *               username: "usuario_ejemplo"
+     *               password: "contraseña123"
+     *     responses:
+     *       200:
+     *         description: Inicio de sesión exitoso
+     *         content:
+     *           application/json:
+     *             schema:
+     *               type: object
+     *               properties:
+     *                 token:
+     *                   type: string
+     *                 user:
+     *                   type: object
+     *                   properties:
+     *                     id:
+     *                       type: string
+     *                     username:
+     *                       type: string
+     *                     email:
+     *                       type: string
+     *       400:
+     *         description: Error en la solicitud
+     *         content:
+     *           application/json:
+     *             schema:
+     *               type: object
+     *               properties:
+     *                 message:
+     *                   type: string
+     *       401:
+     *         description: Credenciales inválidas
+     */
 
     public async login(req: Request, res: Response): Promise<Response> {
         try {

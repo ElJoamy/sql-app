@@ -33,3 +33,9 @@ export const redis_env = {
     password: process.env.REDIS_PASSWORD || ''
 }
 console.log(redis_env);
+
+export const swagger_env = {
+    title: process.env.SW_TITLE || 'app',
+    version: process.env.SW_VERSION || '1.0.0'
+}
+console.log(swagger_env);
