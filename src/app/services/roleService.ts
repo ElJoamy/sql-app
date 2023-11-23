@@ -27,7 +27,6 @@ export class RoleService {
         return roleResponse;
     }
 
-    //get all roles
     async getRoles(): Promise<CreateRoleDTO[]> {
         const roles = await this.roleRepository.findAll();
         const rolesResponse: CreateRoleDTO[] = roles.map((role) => {
@@ -39,4 +38,5 @@ export class RoleService {
         });
         return rolesResponse;
     }
+
 }
